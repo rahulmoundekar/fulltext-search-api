@@ -55,6 +55,20 @@ When a normal Full-Text Search doesn't return results, the API can fall back to 
 
 ---
 
+## 🧭 Engineering Case Study
+
+| Concern | Design decision | Why it matters |
+|---|---|---|
+| Search engine choice | PostgreSQL Full-Text Search first | Keeps the stack simpler when database-native search fits |
+| Typo tolerance | pg_trgm + word_similarity() fallback | Common misspellings still return useful candidates |
+| Relevance | Text score + rating + review popularity | Ranking can reflect both lexical relevance and business signals |
+| Performance | GIN indexes + pagination | Keeps retrieval efficient as the dataset grows |
+
+<p align="center">
+  <img src="assets/architecture.svg" width="100%" alt="Full-text search architecture"/>
+</p>
+
+
 # 🚀 Features
 
 - PostgreSQL Full-Text Search
