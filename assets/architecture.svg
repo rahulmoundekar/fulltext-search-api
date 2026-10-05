@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="t d">
+<title id="t">Full-text search architecture</title><desc id="d">PostgreSQL full-text search ranks results and falls back to trigram fuzzy matching when needed.</desc>
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#07121f"/><stop offset="1" stop-color="#164e63"/></linearGradient></defs>
+<rect width="1200" height="420" rx="24" fill="url(#g)"/>
+<text x="55" y="55" fill="#f8fafc" font-size="25" font-family="Arial" font-weight="700">Search Relevance Pipeline</text>
+<text x="55" y="82" fill="#94a3b8" font-size="14" font-family="Arial">Use PostgreSQL-native search first; fall back to fuzzy matching for common typos.</text>
+<g font-family="Arial" font-size="15" text-anchor="middle">
+<g fill="#0f172a" stroke="#22d3ee" stroke-width="2">
+<rect x="45" y="145" width="170" height="95" rx="16"/><rect x="245" y="145" width="180" height="95" rx="16"/><rect x="455" y="145" width="190" height="95" rx="16"/><rect x="675" y="145" width="170" height="95" rx="16"/><rect x="875" y="145" width="280" height="95" rx="16"/>
+</g>
+<text x="130" y="183" fill="#67e8f9" font-weight="700">Query</text><text x="130" y="207" fill="#cbd5e1">validation + filters</text>
+<text x="335" y="183" fill="#67e8f9" font-weight="700">Full-Text Search</text><text x="335" y="207" fill="#cbd5e1">tsvector + tsquery</text>
+<text x="550" y="183" fill="#67e8f9" font-weight="700">Fallback</text><text x="550" y="207" fill="#cbd5e1">pg_trgm + similarity</text>
+<text x="760" y="183" fill="#67e8f9" font-weight="700">Ranking</text><text x="760" y="207" fill="#cbd5e1">relevance + business signals</text>
+<text x="1015" y="183" fill="#67e8f9" font-weight="700">PostgreSQL Result</text><text x="1015" y="207" fill="#cbd5e1">GIN indexes + pagination</text>
+</g>
+<g stroke="#64748b" stroke-width="3"><path d="M215 193h30"/><path d="M425 193h30"/><path d="M645 193h30"/><path d="M845 193h30"/></g>
+<text x="600" y="300" text-anchor="middle" fill="#22d3ee" font-size="18" font-family="Arial" font-weight="700">Design trade-off</text>
+<text x="600" y="328" text-anchor="middle" fill="#cbd5e1" font-size="14" font-family="Arial">A separate search engine is not mandatory when PostgreSQL features satisfy the workload.</text>
+<text x="55" y="380" fill="#64748b" font-size="12" font-family="Arial">Java 21 · Spring Boot · PostgreSQL FTS · pg_trgm · GIN · Flyway</text>
+</svg>
