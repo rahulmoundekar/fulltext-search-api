@@ -1,5 +1,7 @@
 # Full Text Search API
 
+<p align="center">[![CI](https://github.com/rahulmoundekar/fulltext-search-api/actions/workflows/ci.yml/badge.svg)](https://github.com/rahulmoundekar/fulltext-search-api/actions/workflows/ci.yml)</p>
+
 A production-style Spring Boot REST API demonstrating PostgreSQL-native Full-Text Search, relevance ranking, fuzzy search, filtering, sorting, pagination, search suggestions, and database indexing.
 
 ---
